@@ -52,7 +52,6 @@ def root():
 def shorten_url(body: ShortenRequest, db: Session = Depends(get_db)):
     original = str(body.url)
 
-    # Проверяем, не сокращали ли уже эту ссылку
     existing = db.query(models.URL).filter(models.URL.original_url == original).first()
     if existing:
         return ShortenResponse(
@@ -61,7 +60,6 @@ def shorten_url(body: ShortenRequest, db: Session = Depends(get_db)):
             short_code=existing.short_code,
         )
 
-    # Генерируем уникальный код
     for _ in range(10):
         code = generate_code()
         if not db.query(models.URL).filter(models.URL.short_code == code).first():
