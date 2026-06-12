@@ -8,7 +8,7 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-Fullstack сервис для сокращения ссылок — аналог bit.ly
+Сервис для сокращения ссылок — аналог bit.ly
 
 </div>
 
@@ -46,11 +46,11 @@ uvicorn main:app --reload
 
 API будет доступен на `http://localhost:8000`
 
-Документация: `http://localhost:8000/docs` (Swagger UI — автоматически)
+Документация: `http://localhost:8000/docs` (Swagger UI)
 
 ### Frontend
 
-Открой `frontend/index.html` в браузере — и готово, никаких сборщиков.
+Открой `frontend/index.html` в браузере — откроется страница для сокращения.
 
 ---
 
