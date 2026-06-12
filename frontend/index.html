@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="logo">⚡ shortly</div>
+      <p class="tagline">Сокращай ссылки мгновенно</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <label class="input-label">Вставь длинную ссылку</label>
+        <div class="input-row">
+          <input
+            id="urlInput"
+            type="url"
+            placeholder="https://example.com/very/long/url..."
+            autocomplete="off"
+          />
+          <button id="shortenBtn">Сократить</button>
+        </div>
+        <p id="errorMsg" class="error hidden"></p>
+      </div>
+
+      <div id="result" class="card result-card hidden">
+        <div class="result-label">Короткая ссылка</div>
+        <div class="result-row">
+          <a id="shortLink" href="#" target="_blank" class="short-link"></a>
+          <button id="copyBtn" class="copy-btn">Копировать</button>
+        </div>
+        <div class="stats-row">
+          <span id="statsClicks" class="stat">👆 0 переходов</span>
+          <button id="statsBtn" class="stats-btn">Обновить статистику</button>
+        </div>
+      </div>
+
+      <div id="history" class="card hidden">
+        <div class="result-label">История</div>
+        <ul id="historyList" class="history-list"></ul>
+      </div>
+    </main>
+
+    <footer>
+      <span>Сделано на FastAPI + SQLite</span>
+      <a href="https://github.com/xmiroxxx142/url-shortener" target="_blank">GitHub ↗</a>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
